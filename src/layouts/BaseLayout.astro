@@ -1,5 +1,5 @@
 ---
-
+const { pageTitle, pageDescription } = Astro.props;
 ---
 
 <!doctype html>
@@ -8,11 +8,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="RJ Leyva’s blog shares hands-on tips for building with Astro and React, configuring Neovim plugins, and customizing split keyboard setups—perfect for modern web developers and tinkerers."
-    />
-    <title>RJ Leyva's Blog</title>
+    <meta name="description" content={pageDescription} />
+    <title>{pageTitle}</title>
   </head>
   <body>
     <slot />
