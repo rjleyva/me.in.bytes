@@ -1,0 +1,15 @@
+---
+interface HeaderProps {
+  siteLogo: string;
+}
+
+const { siteLogo } = Astro.props as HeaderProps;
+---
+
+<header class="site-header">
+  <nav class="site-header__nav" aria-label="Primary navigation">
+    <a href="/" class="site-header__home-link" aria-label="Go to homepage">
+      <span aria-hidden="true">{siteLogo}</span>
+    </a>
+  </nav>
+</header>
