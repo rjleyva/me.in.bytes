@@ -1,9 +1,16 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/Hero.astro';
 
 const pageTitle = "RJ Leyva's Blog";
 const pageDescription =
   'RJ Leyva’s blog shares hands-on tips for building with Astro and React, configuring Neovim plugins, and customizing split keyboard setups—perfect for modern web developers and tinkerers.';
 ---
 
-<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription} />
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
+  <Hero
+    heroHeading="Hello there! "
+    wavingHand=" 👋🏻"
+    heroBio="I'm RJ, a consultant by day, developer at heart. Dive in for Neovim, keyboards, and crafts."
+  />
+</BaseLayout>
