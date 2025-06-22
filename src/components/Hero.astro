@@ -31,7 +31,7 @@ const { heroHeading, wavingHand, heroBio } = Astro.props as HeroProps;
 
 <style>
   .hero__section {
-    max-width: 42rem;
+    max-width: 30rem;
     margin: 0 auto;
     padding: 1rem;
   }
@@ -79,6 +79,22 @@ const { heroHeading, wavingHand, heroBio } = Astro.props as HeroProps;
     }
     100% {
       transform: rotate(0deg);
+    }
+  }
+
+  .hero__bio {
+    font-size: 0.95rem;
+  }
+
+  @media (min-width: 37.5rem) {
+    .hero__bio {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 55rem) {
+    .hero__bio {
+      font-size: 1.05rem;
     }
   }
 </style>
