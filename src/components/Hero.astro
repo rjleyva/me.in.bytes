@@ -35,4 +35,20 @@ const { heroHeading, wavingHand, heroBio } = Astro.props as HeroProps;
     margin: 0 auto;
     padding: 1rem;
   }
+
+  .hero__heading {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 37.5rem) {
+    .hero__heading {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (min-width: 55rem) {
+    .hero__heading {
+      font-size: 1.7rem;
+    }
+  }
 </style>
