@@ -1,5 +1,7 @@
 ---
-const { pageTitle, pageDescription } = Astro.props;
+import type { PageMetadata } from '@/types';
+
+const { pageTitle, pageDescription } = Astro.props as PageMetadata;
 ---
 
 <!doctype html>
