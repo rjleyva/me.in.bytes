@@ -6,10 +6,15 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "bunx --bun astro dev",
+    "check": "astro check",
+    "build": "bunx --bun astro build",
+    "preview": "bunx --bun astro preview",
+    "format": "bunx --bun prettier --write .",
+    "lint": "bunx --bun eslint .",
+    "typecheck": "bunx --bun tsc --noEmit",
+    "clean": "rm -rf .astro dist",
+    "astro": "bunx --bun astro"
   },
   "dependencies": {
     "astro": "^5.10.0"
