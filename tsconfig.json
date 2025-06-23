@@ -4,37 +4,19 @@
     "verbatimModuleSyntax": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@types/*": [
-        "src/types/*"
-      ]
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@types/*": ["src/types/*"]
     },
-    "@assets/*": [
-      "src/assets/*"
-    ],
+    "@assets/*": ["src/assets/*"],
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"
       }
     ]
   },
-  "include": [
-    ".astro/types.d.ts",
-    "**/*"
-  ],
-  "exclude": [
-    "dist",
-    "public/"
-  ]
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist", "public/"]
 }
