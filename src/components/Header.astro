@@ -1,4 +1,6 @@
 ---
+import SocialLinks from './SocialLinks.astro';
+
 interface HeaderProps {
   siteLogo: string;
 }
@@ -11,6 +13,8 @@ const { siteLogo } = Astro.props as HeaderProps;
     <a href="/" class="site-header__home-link" aria-label="Go to homepage">
       <span aria-hidden="true">{siteLogo}</span>
     </a>
+
+    <SocialLinks />
   </nav>
 </header>
 
