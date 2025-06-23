@@ -19,7 +19,6 @@
   "dependencies": {
     "-": "^0.0.1",
     "@astrojs/check": "^0.9.4",
-    "@fontsource-variable/epilogue": "^5.2.6",
     "astro": "^5.10.0",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.8.3"
