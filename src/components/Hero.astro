@@ -1,6 +1,4 @@
 ---
-import SocialLinks from './SocialLinks.astro';
-
 interface HeroProps {
   heroHeading: string;
   wavingHand: string;
@@ -28,8 +26,6 @@ const { heroHeading, wavingHand, heroBio } = Astro.props as HeroProps;
     <p class="hero__bio">
       {heroBio}
     </p>
-
-    <SocialLinks />
   </section>
 </main>
 
