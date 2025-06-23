@@ -1,5 +1,6 @@
 ---
 import type { PageMetadata } from '@/types';
+import Header from '@/components/Header.astro';
 
 const { pageTitle, pageDescription } = Astro.props as PageMetadata;
 ---
@@ -14,6 +15,7 @@ const { pageTitle, pageDescription } = Astro.props as PageMetadata;
     <title>{pageTitle}</title>
   </head>
   <body>
+    <Header siteLogo="Logo" />
     <slot />
   </body>
 </html>
