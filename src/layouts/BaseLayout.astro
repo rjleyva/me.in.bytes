@@ -1,5 +1,4 @@
 ---
-import SpeedInsights from '@vercel/speed-insights/astro';
 import type { PageMetadata } from '@/types';
 import Header from '@/components/Header.astro';
 
@@ -18,7 +17,6 @@ const { pageTitle, pageDescription } = Astro.props as PageMetadata;
   <body>
     <Header siteLogo="Logo" />
     <slot />
-    <SpeedInsights />
   </body>
 </html>
 
