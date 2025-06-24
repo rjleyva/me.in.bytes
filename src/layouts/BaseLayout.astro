@@ -65,4 +65,16 @@ const { pageTitle, pageDescription } = Astro.props as PageMetadata;
     color: inherit;
     text-decoration: none;
   }
+
+  .social-icon {
+    transition: transform 0.1s ease-in-out;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.1) rotate(10deg);
+  }
+
+  .social-icon--reverse-rotate:hover {
+    transform: scale(1.1) rotate(-10deg);
+  }
 </style>
