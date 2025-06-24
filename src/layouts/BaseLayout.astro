@@ -22,16 +22,16 @@ const { pageTitle, pageDescription } = Astro.props as PageMetadata;
 
 <style is:global>
   @font-face {
-    font-family: 'Space Grotesk';
-    src: url('/fonts/space-grotesk-latin-500-normal.woff2') format('woff2');
-    font-weight: 500;
+    font-family: 'Open Sans';
+    src: url('/fonts/open-sans-latin-600-normal.woff2') format('woff2');
+    font-weight: 600;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'Space Grotesk';
-    src: url('/fonts/space-grotesk-latin-700-normal.woff2') format('woff2');
+    font-family: 'Open Sans';
+    src: url('/fonts/open-sans-latin-700-normal.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -54,8 +54,8 @@ const { pageTitle, pageDescription } = Astro.props as PageMetadata;
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
