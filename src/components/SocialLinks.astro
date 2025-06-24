@@ -36,17 +36,17 @@ const socialLinks: socialLinksProps[] = [
 <div id="social-links" class="socials" aria-label="Social media links">
   <ul class="socials__list">
     {
-      socialLinks.map(item => (
+      socialLinks.map(link => (
         <li class="socials__item">
           <a
-            href={item.href}
+            href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={item.name}
-            title={item.name}
+            aria-label={link.name}
+            title={link.name}
             class="socials__link"
           >
-            <item.icon />
+            <link.icon />
           </a>
         </li>
       ))
