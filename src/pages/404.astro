@@ -1,0 +1,42 @@
+---
+import type { PageMetadata } from '@/types';
+
+const metadata: PageMetadata = {
+  pageTitle: '404 – Page Not Found | YourSiteName',
+  pageDescription:
+    'Oops! This page doesn’t exist. Return to the homepage or explore our blog.'
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={metadata.pageDescription} />
+    <title>{metadata.pageTitle}</title>
+  </head>
+
+  <body class="error-page">
+    <main class="error-page__main" aria-labelledby="error-section__title">
+      <section id="error-section" class="error-section">
+        <h1 id="error-section__title" class="error-section__title">
+          404 – Page Not Found
+        </h1>
+        <p class="error-section__message">
+          Sorry, the page you’re looking for doesn’t exist or has been moved.
+        </p>
+        <p class="error-section__back">
+          <a
+            href="/"
+            aria-label="Go back to the blog homepage"
+            class="error-section__link"
+          >
+            ← Back to Blog
+          </a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
