@@ -1,0 +1,55 @@
+---
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+import InstagramIcon from './icons/InstagramIcon.astro';
+import GithubIcon from './icons/GithubIcon.astro';
+import LinkedinIcon from './icons/LinkedinIcon.astro';
+
+interface socialLinksProps {
+  id: string;
+  name: string;
+  href: string;
+  icon: AstroComponentFactory;
+}
+
+const socialLinks: socialLinksProps[] = [
+  {
+    id: 'instagram',
+    name: 'Instagram',
+    href: 'https://instagram.com/slammedwigo',
+    icon: InstagramIcon
+  },
+  {
+    id: 'github',
+    name: 'GitHub',
+    href: 'https://github.com/rjleyva',
+    icon: GithubIcon
+  },
+  {
+    id: 'linkedin',
+    name: 'LinkedIn',
+    href: 'https://linkedin.com/in/rjleyva',
+    icon: LinkedinIcon
+  }
+];
+---
+
+<nav id="social-links" class="socials" aria-label="Social media links">
+  <ul class="socials__list">
+    {
+      socialLinks.map(item => (
+        <li class="socials__item">
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={item.name}
+            title={item.name}
+            class="socials__link"
+          >
+            <item.icon />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
