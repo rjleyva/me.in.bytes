@@ -4,7 +4,8 @@ import type { PageMetadata } from '@/types';
 const metadata: PageMetadata = {
   pageTitle: '404 – Page Not Found | RJ Leyva’s Blog',
   pageDescription:
-    'Oops! This page doesn’t exist. Return to the homepage or explore our blog.'
+    'Oops! This page doesn’t exist. Return to the homepage or explore our blog.',
+  pageURL: 'https://me-in-bytes.vercel.app/404'
 };
 ---
 
@@ -16,7 +17,7 @@ const metadata: PageMetadata = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={metadata.pageDescription} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://me-in-bytes.vercel.app/404" />
+    <meta property="og:url" content={metadata.pageURL} />
     <meta property="og:title" content={metadata.pageTitle} />
     <meta property="og:description" content={metadata.pageDescription} />
     <title>{metadata.pageTitle}</title>
