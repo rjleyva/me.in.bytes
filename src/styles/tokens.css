@@ -1,0 +1,14 @@
+:root {
+  /* Light Mode */
+  --text-base: #020617;
+  --text-secondary: #f8fafc;
+  --bg-base: #f8fafc;
+  --bg-secondary: #1d4ed8;
+  --bg-hover: #3b82f6;
+
+  --icon-base: #334155;
+  --icon-hover: #3b82f6;
+
+  --skip-content-text: #f1f5f9;
+  --skip-content-bg: #1d4ed8;
+}
