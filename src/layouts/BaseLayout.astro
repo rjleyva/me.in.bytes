@@ -18,6 +18,7 @@ const { pageTitle, pageDescription, pageURL } = Astro.props as PageMetadata;
     <meta property="og:description" content={pageDescription} />
     <meta name="description" content={pageDescription} />
     <title>{pageTitle}</title>
+    <link rel="canonical" href={pageURL} />
   </head>
 
   <body>
