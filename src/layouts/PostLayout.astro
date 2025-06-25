@@ -1,0 +1,36 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter, Content } = Astro.props;
+const pageURL = Astro.url.pathname;
+---
+
+<BaseLayout
+  pageTitle={frontmatter.title}
+  pageDescription={frontmatter.description}
+  pageURL={pageURL}
+>
+  <article class="post" aria-labelledby="post-title">
+    <section class="post__header">
+      <h1 id="post-title" class="post__title">
+        {frontmatter.title}
+      </h1>
+      <p class="post__meta">
+        <time
+          class="post__date"
+          datetime={frontmatter.date.toISOString()}
+          title={frontmatter.date.toUTCString()}
+        >
+          {frontmatter.date.toDateString()}
+        </time>
+      </p>
+    </section>
+
+    <section class="post__content" aria-labelledby="post-content-heading">
+      <h2 id="post-content-heading" class="visually-hidden">Post content</h2>
+      <div class="post__body">
+        <Content />
+      </div>
+    </section>
+  </article>
+</BaseLayout>
