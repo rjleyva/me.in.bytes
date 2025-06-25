@@ -1,12 +1,11 @@
 ---
-import type { PageMetadata } from '@/types';
+import { createMetadata } from '@/utils/metadata';
 
-const metadata: PageMetadata = {
-  pageTitle: '404 – Page Not Found | RJ Leyva’s Blog',
-  pageDescription:
-    'Oops! This page doesn’t exist. Return to the homepage or explore our blog.',
+const metadata = createMetadata({
+  pageTitle: 'Page Not Found',
+  pageDescription: 'Oops! This page does not exist.',
   pageURL: 'https://me-in-bytes.vercel.app/404'
-};
+});
 ---
 
 <!doctype html>
