@@ -1,6 +1,7 @@
 ---
 import type { PageMetadata } from '@/types';
 import Header from '@/components/Header.astro';
+import '../styles/tokens.css';
 
 const { pageTitle, pageDescription, pageURL, ogDescription } =
   Astro.props as PageMetadata;
@@ -62,8 +63,8 @@ const { pageTitle, pageDescription, pageURL, ogDescription } =
     }
 
     body {
-      background: var(--background);
-      color: var(--foreground);
+      background: var(--bg-base);
+      color: var(--text-base);
       font-family: 'Open Sans', sans-serif;
       font-weight: 600;
       text-rendering: optimizeLegibility;
@@ -75,8 +76,8 @@ const { pageTitle, pageDescription, pageURL, ogDescription } =
       position: absolute;
       top: -2.5rem;
       left: 0;
-      background: #3b5bdb;
-      color: #fff;
+      background: var(--skip-content-bg);
+      color: var(--skip-content-text);
       padding: 0.5rem 1rem;
       z-index: 100;
       text-decoration: none;
@@ -93,17 +94,17 @@ const { pageTitle, pageDescription, pageURL, ogDescription } =
     }
 
     .social-icon {
-      color: #495057;
+      color: var(--icon-base);
       transition: transform 0.1s ease-in-out;
     }
 
     .social-icon:hover {
-      color: #3b5bdb;
+      color: var(--icon-hover);
       transform: scale(1.1) rotate(10deg);
     }
 
     .social-icon--reverse-rotate:hover {
-      color: #3b5bdb;
+      color: var(--icon-hover);
       transform: scale(1.1) rotate(-10deg);
     }
   </style>
