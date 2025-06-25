@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import { createMetadata } from '@/utils/metadata';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const metadata = createMetadata({
+  pageTitle: "RJ Leyva's Blog Archive",
+  pageDescription: 'Read all articles and learning logs.',
+  pageURL: new URL('/blog', Astro.site).toString()
+});
+
+const posts = (await getCollection('posts')) as CollectionEntry<'posts'>[];
+---
+
+<BaseLayout {...metadata}>
+  <section class="blog-archive" aria-labelledby="blog-archive__title">
+    <h1 id="blog-archive__title" class="blog-archive__title">Blog Archive</h1>
+    <ul class="blog-archive__list">
+      {
+        posts.map(post => (
+          <li class="blog-archive__item" id={post.id}>
+            <article
+              class="blog-archive__post"
+              aria-labelledby={`post-title-${post.id}`}
+            >
+              <h2 id={`post-title-${post.id}`} class="blog-archive__post-title">
+                <a class="blog-archive__post-link" href={`/blog/${post.slug}/`}>
+                  {post.data.title}
+                </a>
+              </h2>
+              <p class="blog-archive__meta">
+                <time datetime={post.data.date.toISOString()}>
+                  {post.data.date.toDateString()}
+                </time>
+              </p>
+              <p class="blog-archive__description">{post.data.description}</p>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
