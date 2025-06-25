@@ -1,0 +1,23 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import PostLayout from '@/layouts/PostLayout.astro';
+
+const { slug } = Astro.params;
+
+const post = await getEntry('posts', slug);
+if (!post) {
+  throw new Error(`Post not found for slug: ${slug}`);
+}
+
+const { Content } = await post.render();
+const pageURL = new URL(`/blog/${slug}/`, Astro.site).toString();
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map(post => ({
+    params: { slug: post.slug }
+  }));
+}
+---
+
+<PostLayout frontmatter={post.data} Content={Content} pageURL={pageURL} />
