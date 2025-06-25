@@ -1,18 +1,17 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/Hero.astro';
+import type { PageMetadata } from '@/types';
 
-const pageTitle = "RJ Leyva's Blog";
-const pageDescription =
-  'RJ Leyva’s blog shares hands-on tips for building with Astro and React, configuring Neovim plugins, and customizing split keyboard setups—perfect for modern web developers and tinkerers.';
-const pageURL = 'https://me-in-bytes.vercel.app';
+const metadata: PageMetadata = {
+  pageTitle: "RJ Leyva's Blog",
+  pageDescription:
+    'RJ Leyva’s blog shares hands-on tips for building with Astro and React, configuring Neovim plugins, and customizing split keyboard setups—perfect for modern web developers and tinkerers.',
+  pageURL: 'https://me-in-bytes.vercel.app'
+};
 ---
 
-<BaseLayout
-  pageTitle={pageTitle}
-  pageDescription={pageDescription}
-  pageURL={pageURL}
->
+<BaseLayout {...metadata}>
   <Hero
     heroHeading="Hello there! "
     wavingHand=" 👋🏻"
