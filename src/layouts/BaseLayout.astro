@@ -2,82 +2,91 @@
 import type { PageMetadata } from '@/types';
 import Header from '@/components/Header.astro';
 
-const { pageTitle, pageDescription } = Astro.props as PageMetadata;
+const { pageTitle, pageDescription, pageURL } = Astro.props as PageMetadata;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageURL} />
+    <meta property="og:site_name" content="RJ Leyva’s Blog" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
     <meta name="description" content={pageDescription} />
     <title>{pageTitle}</title>
   </head>
+
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <Header siteLogo="Logo" />
-    <slot />
+    <main id="main-content">
+      <slot />
+    </main>
   </body>
+
+  <style is:global>
+    @font-face {
+      font-family: 'Open Sans';
+      src: url('/fonts/open-sans-latin-600-normal.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      src: url('/fonts/open-sans-latin-700-normal.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--foreground);
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      text-rendering: optimizeLegibility;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .social-icon {
+      color: #495057;
+      transition: transform 0.1s ease-in-out;
+    }
+
+    .social-icon:hover {
+      color: #3b5bdb;
+      transform: scale(1.1) rotate(10deg);
+    }
+
+    .social-icon--reverse-rotate:hover {
+      color: #3b5bdb;
+      transform: scale(1.1) rotate(-10deg);
+    }
+  </style>
 </html>
-
-<style is:global>
-  @font-face {
-    font-family: 'Open Sans';
-    src: url('/fonts/open-sans-latin-600-normal.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Open Sans';
-    src: url('/fonts/open-sans-latin-700-normal.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html,
-  body {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-
-  body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .social-icon {
-    color: #16191d;
-    transition: transform 0.1s ease-in-out;
-  }
-
-  .social-icon:hover {
-    color: #4263eb;
-    transform: scale(1.1) rotate(10deg);
-  }
-
-  .social-icon--reverse-rotate:hover {
-    color: #4263eb;
-    transform: scale(1.1) rotate(-10deg);
-  }
-</style>
