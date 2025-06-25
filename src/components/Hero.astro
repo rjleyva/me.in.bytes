@@ -8,26 +8,24 @@ interface HeroProps {
 const { heroHeading, wavingHand, heroBio } = Astro.props as HeroProps;
 ---
 
-<main id="main-content">
-  <section id="intro" aria-labelledby="intro-heading" class="hero__section">
-    <h1 id="intro-heading" class="hero__heading">
-      {heroHeading}
-      <span class="hero__waving">
-        <span
-          class="hero__waving-hand"
-          role="img"
-          aria-label="Waving hand"
-          aria-hidden={wavingHand ? 'false' : 'true'}
-        >
-          {wavingHand}
-        </span>
+<section id="intro" aria-labelledby="intro-heading" class="hero__section">
+  <h1 id="intro-heading" class="hero__heading">
+    {heroHeading}
+    <span class="hero__waving">
+      <span
+        class="hero__waving-hand"
+        role="img"
+        aria-label="Waving hand"
+        aria-hidden={wavingHand ? 'false' : 'true'}
+      >
+        {wavingHand}
       </span>
-    </h1>
-    <p class="hero__bio">
-      {heroBio}
-    </p>
-  </section>
-</main>
+    </span>
+  </h1>
+  <p class="hero__bio">
+    {heroBio}
+  </p>
+</section>
 
 <style>
   .hero__section {
