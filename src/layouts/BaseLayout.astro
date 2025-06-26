@@ -3,7 +3,7 @@ import type { PageMetadata } from '@/types';
 import Header from '@/components/Header.astro';
 import '../styles/tokens.css';
 
-const { pageTitle, pageDescription, pageURL, ogDescription } =
+const { pageTitle, pageDescription, pageURL, ogDescription, structuredData } =
   Astro.props as PageMetadata;
 ---
 
@@ -19,8 +19,17 @@ const { pageTitle, pageDescription, pageURL, ogDescription } =
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={ogDescription} />
     <meta name="description" content={pageDescription} />
-    <title>{pageTitle}</title>
     <link rel="canonical" href={pageURL} />
+    <title>{pageTitle}</title>
+    {
+      structuredData && (
+        <script
+          type="application/ld+json"
+          is:inline
+          set:html={JSON.stringify(structuredData)}
+        />
+      )
+    }
   </head>
 
   <body>
