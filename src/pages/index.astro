@@ -1,8 +1,9 @@
 ---
+import { createMetadata } from '@/utils/metadata';
+import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/Hero.astro';
 import type { PageMetadata } from '@/types';
-import { createMetadata } from '@/utils/metadata';
 
 const metadata: PageMetadata = createMetadata({
   pageTitle: "RJ Leyva's Blog",
@@ -10,6 +11,11 @@ const metadata: PageMetadata = createMetadata({
     'Explore RJ Leyva’s blog for practical tips on Astro and React development, Neovim configuration, split mechanical keyboards, and digital crafting—ideal for developers, makers, and tinkerers.',
   pageURL: 'https://me-in-bytes.vercel.app'
 });
+
+const posts = await getCollection('posts');
+const sortedPosts = posts.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
 ---
 
 <BaseLayout {...metadata}>
@@ -17,5 +23,6 @@ const metadata: PageMetadata = createMetadata({
     heroHeading="Hello there! "
     wavingHand=" 👋🏻"
     heroBio="I'm RJ, a consultant by day, developer at heart. Dive in for Neovim, keyboards, and crafts."
+    recentPosts={sortedPosts}
   />
 </BaseLayout>
