@@ -30,82 +30,82 @@ const { pageTitle, pageDescription, pageURL, ogDescription } =
       <slot />
     </main>
   </body>
-
-  <style is:global>
-    @font-face {
-      font-family: 'Open Sans';
-      src: url('/fonts/open-sans-latin-600-normal.woff2') format('woff2');
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: 'Open Sans';
-      src: url('/fonts/open-sans-latin-700-normal.woff2') format('woff2');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html,
-    body {
-      max-width: 100vw;
-      overflow-x: hidden;
-    }
-
-    body {
-      background: var(--bg-base);
-      color: var(--text-base);
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 600;
-      text-rendering: optimizeLegibility;
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .skip-link {
-      position: absolute;
-      top: -2.5rem;
-      left: 0;
-      background: var(--skip-content-bg);
-      color: var(--skip-content-text);
-      padding: 0.5rem 1rem;
-      z-index: 100;
-      text-decoration: none;
-      transition: top 0.3s;
-    }
-
-    .skip-link:focus {
-      top: 0;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .social-icon {
-      color: var(--icon-base);
-      transition: transform 0.1s ease-in-out;
-    }
-
-    .social-icon:hover {
-      color: var(--icon-hover);
-      transform: scale(1.1) rotate(10deg);
-    }
-
-    .social-icon--reverse-rotate:hover {
-      color: var(--icon-hover);
-      transform: scale(1.1) rotate(-10deg);
-    }
-  </style>
 </html>
+
+<style is:global>
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/open-sans-latin-600-normal.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/open-sans-latin-700-normal.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: var(--bg-base);
+    color: var(--text-base);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .skip-link {
+    position: absolute;
+    top: -2.5rem;
+    left: 0;
+    background: var(--skip-content-bg);
+    color: var(--skip-content-text);
+    padding: 0.5rem 1rem;
+    z-index: 100;
+    text-decoration: none;
+    transition: top 0.3s;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .social-icon {
+    color: var(--icon-base);
+    transition: transform 0.1s ease-in-out;
+  }
+
+  .social-icon:hover {
+    color: var(--icon-hover);
+    transform: scale(1.1) rotate(10deg);
+  }
+
+  .social-icon--reverse-rotate:hover {
+    color: var(--icon-hover);
+    transform: scale(1.1) rotate(-10deg);
+  }
+</style>
