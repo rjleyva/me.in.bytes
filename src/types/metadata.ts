@@ -3,4 +3,5 @@ export interface PageMetadata {
   pageDescription: string;
   pageURL: string;
   ogDescription: string;
+  structuredData?: unknown;
 }
