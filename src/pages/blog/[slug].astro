@@ -1,6 +1,8 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import PostLayout from '@/layouts/PostLayout.astro';
+import { generatePostJsonLd } from '@/utils/jsonld';
+import { createMetadata } from '@/utils/metadata';
 
 const { slug } = Astro.params;
 
@@ -10,7 +12,19 @@ if (!post) {
 }
 
 const { Content } = await post.render();
+
 const pageURL = new URL(`/blog/${slug}/`, Astro.site).toString();
+
+const baseMeta = createMetadata({
+  pageTitle: post.data.title,
+  pageDescription: post.data.description,
+  pageURL
+});
+
+const metadata = {
+  ...baseMeta,
+  structuredData: generatePostJsonLd(post, pageURL)
+};
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -20,4 +34,4 @@ export async function getStaticPaths() {
 }
 ---
 
-<PostLayout frontmatter={post.data} Content={Content} pageURL={pageURL} />
+<PostLayout frontmatter={post.data} Content={Content} {...metadata} />
