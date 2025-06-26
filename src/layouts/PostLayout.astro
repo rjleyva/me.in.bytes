@@ -25,7 +25,7 @@ const pageURL = Astro.url.pathname;
           datetime={frontmatter.date.toISOString()}
           title={frontmatter.date.toUTCString()}
         >
-          {frontmatter.date.toDateString()}
+          {frontmatter.date.toLocaleDateString('en-US', { dateStyle: 'long' })}
         </time>
       </p>
     </section>
