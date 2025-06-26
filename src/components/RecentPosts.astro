@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface RecentPostsProps {
+  recentPostsHeading?: string;
+  recentPosts: CollectionEntry<'posts'>[];
+}
+
+const { recentPostsHeading = 'Latest Posts', recentPosts } =
+  Astro.props as RecentPostsProps;
+---
+
+<div aria-labelledby="recent-posts-heading">
+  <h2 id="recent-posts-heading" class="recent-posts__title">
+    {recentPostsHeading}
+  </h2>
+  <ul class="recent-posts__list">
+    {
+      recentPosts.slice(0, 3).map(post => (
+        <li class="recent-posts__item" id={post.id}>
+          <article class="recent-posts__post">
+            <h3 class="recent-posts__post-title">
+              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            </h3>
+            <p class="recent-posts__meta">
+              <time
+                datetime={post.data.date.toISOString()}
+                title={post.data.date.toUTCString()}
+              >
+                {post.data.date.toLocaleDateString('en-US', {
+                  dateStyle: 'long'
+                })}
+              </time>
+            </p>
+            <p class="recent-posts__description">{post.data.description}</p>
+          </article>
+        </li>
+      ))
+    }
+  </ul>
+</div>
