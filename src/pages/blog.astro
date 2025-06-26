@@ -45,3 +45,38 @@ const posts = (await getCollection('posts')).sort(
     </ul>
   </section>
 </BaseLayout>
+
+<style>
+  .blog-archive {
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 30rem;
+  }
+
+  .blog-archive__title {
+    margin-bottom: 1rem;
+  }
+
+  .blog-archive__list {
+    list-style-type: none;
+  }
+
+  .blog-archive__post-title,
+  .blog-archive__title {
+    font-size: 1.1rem;
+  }
+
+  @media (min-width: 37.5rem) {
+    .blog-archive__post-title,
+    .blog-archive__title {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (min-width: 37.5rem) {
+    .blog-archive__post-title,
+    .blog-archive__title {
+      font-size: 1.3rem;
+    }
+  }
+</style>
