@@ -13,6 +13,7 @@ const pageURL = Astro.url.pathname;
   pageTitle={frontmatter.title}
   pageDescription={frontmatter.description}
   pageURL={pageURL}
+  {...Astro.props}
 >
   <article
     class="post"
