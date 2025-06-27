@@ -14,27 +14,45 @@ const pageURL = Astro.url.pathname;
   pageDescription={frontmatter.description}
   pageURL={pageURL}
 >
-  <article class="post" aria-labelledby="post-title">
-    <section class="post__header">
-      <h1 id="post-title" class="post__title">
+  <article
+    class="post"
+    aria-labelledby="post__title"
+    role="article"
+    itemscope
+    itemtype="https://schema.org/Article"
+  >
+    <header class="post__header" role="group">
+      <h1 id="post__title" class="post__title" itemprop="headline">
         {frontmatter.title}
       </h1>
+
+      {
+        frontmatter.description && (
+          <p class="post__description" itemprop="description">
+            {frontmatter.description}
+          </p>
+        )
+      }
+
       <p class="post__meta">
         <time
           class="post__date"
           datetime={frontmatter.date.toISOString()}
           title={frontmatter.date.toUTCString()}
+          itemprop="datePublished"
         >
           {frontmatter.date.toLocaleDateString('en-US', { dateStyle: 'long' })}
         </time>
       </p>
-    </section>
+    </header>
 
-    <section class="post__content" aria-labelledby="post-content-heading">
-      <h2 id="post-content-heading" class="visually-hidden">Post content</h2>
-      <div class="post__body">
-        <Content />
-      </div>
+    <section
+      class="post__content"
+      aria-label="Post content"
+      role="region"
+      itemprop="articleBody"
+    >
+      <Content />
     </section>
   </article>
 </BaseLayout>
