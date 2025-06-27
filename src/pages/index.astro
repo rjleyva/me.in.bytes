@@ -3,19 +3,35 @@ import { createMetadata } from '@/utils/metadata';
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/Hero.astro';
+import { generateBlogJsonLd } from '@/utils/jsonld';
 import type { PageMetadata } from '@/types';
-
-const metadata: PageMetadata = createMetadata({
-  pageTitle: "RJ Leyva's Blog",
-  pageDescription:
-    'Explore RJ Leyva’s blog for practical tips on Astro and React development, Neovim configuration, split mechanical keyboards, and digital crafting—ideal for developers, makers, and tinkerers.',
-  pageURL: 'https://me-in-bytes.vercel.app'
-});
 
 const posts = await getCollection('posts');
 const sortedPosts = posts.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
+
+const metadata: PageMetadata = {
+  ...createMetadata({
+    pageTitle: "RJ Leyva's Blog",
+    pageDescription:
+      'Explore RJ Leyva’s blog for practical tips on Astro and React development, Neovim configuration, split mechanical keyboards, and digital crafting—ideal for developers, makers, and tinkerers.',
+    pageURL: 'https://me-in-bytes.vercel.app'
+  }),
+  structuredData: generateBlogJsonLd(
+    sortedPosts,
+    {
+      pageTitle: "RJ Leyva's Blog",
+      pageDescription:
+        'Explore RJ Leyva’s blog for practical tips on Astro and React development, Neovim configuration, split mechanical keyboards, and digital crafting—ideal for developers, makers, and tinkerers.',
+      pageURL: 'https://me-in-bytes.vercel.app'
+    },
+    {
+      publisherName: 'RJ Leyva',
+      publisherLogo: 'https://me-in-bytes.vercel.app/logo.svg'
+    }
+  )
+};
 ---
 
 <BaseLayout {...metadata}>
