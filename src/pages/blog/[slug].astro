@@ -11,6 +11,11 @@ if (!post) {
   throw new Error(`Post not found for slug: ${slug}`);
 }
 
+
+// Ensure date is a Date object for downstream formatting
+const date = typeof post.data.date === 'string' ? new Date(post.data.date) : post.data.date;
+const frontmatter = { ...post.data, date };
+
 const { Content } = await post.render();
 
 const pageURL = new URL(`/blog/${slug}/`, Astro.site).toString();
@@ -34,4 +39,4 @@ export async function getStaticPaths() {
 }
 ---
 
-<PostLayout frontmatter={post.data} Content={Content} {...metadata} />
+<PostLayout frontmatter={frontmatter} Content={Content} {...metadata} />
