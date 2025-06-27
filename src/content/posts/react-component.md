@@ -6,7 +6,7 @@ date: 2025-06-22
 tags: ['react', 'component', 'jsx', 'frontend']
 ---
 
-Hero.jsx
+# Hero.jsx
 
 ```jsx
 const Hero = () => {
