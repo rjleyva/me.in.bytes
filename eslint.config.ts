@@ -8,12 +8,10 @@ export default [
   {
     files: ['**/*.astro'],
     languageOptions: {
-      parser: astro.parser,
       parserOptions: {
-        parser: tsParser,
-        extraFileExtensions: ['.astro'],
         ecmaVersion: 'latest',
-        sourceType: 'module'
+        sourceType: 'module',
+        extraFileExtensions: ['.astro']
       }
     },
     rules: {}
