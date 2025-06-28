@@ -3,7 +3,7 @@ import { createMetadata } from '@/utils/metadata';
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/Hero.astro';
-import { generateBlogJsonLd } from '@/utils/jsonld';
+import { generateBlogJsonLd } from '@/utils/json-ld';
 import type { PageMetadata } from '@/types';
 
 const posts = await getCollection('posts');
