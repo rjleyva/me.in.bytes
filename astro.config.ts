@@ -5,6 +5,12 @@ export default defineConfig({
   devToolbar: {
     enabled: true
   },
+  markdown: {
+    syntaxHighlight: 'shiki',
+    shikiConfig: {
+      theme: 'catppuccin-latte'
+    }
+  },
   server: {
     port: 3000
   }
