@@ -19,20 +19,25 @@ const { recentPostsHeading = 'Latest Posts', recentPosts } =
       recentPosts.slice(0, 3).map(post => (
         <li class="recent-posts__item" id={post.id}>
           <article class="recent-posts__post">
-            <h3 class="recent-posts__post-title">
-              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-            </h3>
-            <p class="recent-posts__meta">
-              <time
-                datetime={post.data.date.toISOString()}
-                title={post.data.date.toUTCString()}
-              >
-                {post.data.date.toLocaleDateString('en-US', {
-                  dateStyle: 'long'
-                })}
-              </time>
-            </p>
-            <p class="recent-posts__description">{post.data.description}</p>
+            <div class="recent-posts__post-header">
+              <p class="recent-posts__meta">
+                <time
+                  datetime={post.data.date.toISOString()}
+                  title={post.data.date.toUTCString()}
+                >
+                  {(() => {
+                    const date = post.data.date;
+                    const month = date.getMonth() + 1;
+                    const day = String(date.getDate()).padStart(2, '0');
+                    const year = date.getFullYear();
+                    return `${month}-${day}-${year}`;
+                  })()}
+                </time>
+              </p>
+              <h3 class="recent-posts__post-title">
+                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+              </h3>
+            </div>
           </article>
         </li>
       ))
@@ -49,10 +54,6 @@ const { recentPostsHeading = 'Latest Posts', recentPosts } =
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-  }
-
-  .recent-posts__post-title {
-    font-size: 1rem;
   }
 
   .recent-posts__post-title a:focus {
@@ -73,21 +74,10 @@ const { recentPostsHeading = 'Latest Posts', recentPosts } =
     }
   }
 
-  .recent-posts__list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    list-style-type: none;
-  }
-
   .recent-posts__description {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-
-  .recent-posts__meta {
-    color: var(--subtext);
   }
 </style>
