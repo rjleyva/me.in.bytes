@@ -108,6 +108,38 @@ const metadata = {
     list-style-type: none;
   }
 
+  .blog-archive__year {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--heading, #333);
+  }
+
+  .blog-archive__post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .blog-archive__meta {
+    white-space: nowrap;
+    font-size: 0.875rem;
+    color: var(--subtext);
+    flex-shrink: 0;
+  }
+
+  .blog-archive__post-title {
+    margin: 0;
+    text-align: left;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1rem;
+  }
+
   @media (min-width: 37.5rem) {
     .blog-archive__post-title {
       font-size: 1.1rem;
