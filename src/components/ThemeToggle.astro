@@ -47,3 +47,28 @@ import SunIcon from './icons/SunIcon.astro';
     updateIcons(theme);
   });
 </script>
+
+<style>
+  .hidden {
+    display: none;
+  }
+
+  .theme-toggle svg {
+    fill: var(--text);
+    transition: fill 0.3s ease;
+  }
+
+  .theme-toggle {
+    transition: color 0.3s ease;
+  }
+
+  #theme-sun,
+  #theme-moon {
+    color: var(--icon);
+  }
+
+  #theme-sun:hover,
+  #theme-moon:hover {
+    color: var(--icon-overlay);
+  }
+</style>
