@@ -7,13 +7,19 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "bunx --bun astro dev",
+    "dev:verbose": "DEBUG=astro:* bunx --bun astro dev",
     "check": "astro check",
+    "lint": "bunx --bun eslint .",
+    "lint:strict": "bunx --bun eslint . --max-warnings=0",
+    "format": "bunx --bun prettier --write .",
     "build": "bunx --bun astro build",
     "preview": "bunx --bun astro preview",
-    "format": "bunx --bun prettier --write .",
-    "lint": "bunx --bun eslint .",
-    "typecheck": "bunx --bun tsc --noEmit",
     "clean": "rm -rf .astro dist",
+    "clean:all": "rm -rf .astro dist node_modules bun.lockb",
+    "typecheck": "bunx --bun tsc --noEmit",
+    "type:coverage": "bunx --bun type-coverage --detail",
+    "depcheck": "bunx --bun depcheck",
+    "ci": "bun run lint && bun run typecheck && bun run build",
     "astro": "bunx --bun astro"
   },
   "dependencies": {
@@ -25,10 +31,13 @@
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.10.4",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.30.0",
     "@typescript-eslint/parser": "^8.34.1",
     "eslint": "^9.29.0",
     "eslint-plugin-astro": "^1.3.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "jiti": "^2.4.2",
     "prettier": "^3.5.3"
   }
 }
