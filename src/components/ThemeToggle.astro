@@ -1,0 +1,49 @@
+---
+import MoonIcon from './icons/MoonIcon.astro';
+import SunIcon from './icons/SunIcon.astro';
+---
+
+<button
+  id="theme-toggle-btn"
+  class="theme-toggle"
+  aria-label="Toggle dark and light mode"
+  type="button"
+  style="background: none; border: none; cursor: pointer; padding: 0; margin-left: 1rem;"
+>
+  <span id="theme-sun" class="hidden" aria-hidden="true">
+    <SunIcon />
+  </span>
+
+  <span id="theme-moon" class="hidden" aria-hidden="true">
+    <MoonIcon />
+  </span>
+</button>
+
+<script is:inline>
+  const sunIcon = document.getElementById('theme-sun');
+  const moonIcon = document.getElementById('theme-moon');
+  const button = document.getElementById('theme-toggle-btn');
+
+  let theme =
+    localStorage.getItem('theme') ??
+    (window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light');
+
+  document.documentElement.setAttribute('data-theme', theme);
+
+  function updateIcons(currentTheme) {
+    if (!sunIcon || !moonIcon) return;
+    sunIcon.classList.toggle('hidden', currentTheme !== 'dark');
+    moonIcon.classList.toggle('hidden', currentTheme !== 'light');
+  }
+
+  updateIcons(theme);
+
+  button?.addEventListener('click', () => {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    updateIcons(theme);
+  });
+</script>
