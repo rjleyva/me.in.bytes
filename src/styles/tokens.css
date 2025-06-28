@@ -1,14 +1,29 @@
 :root {
-  /* Light Mode */
-  --text-base: #020617;
-  --text-secondary: #f8fafc;
-  --bg-base: #f8fafc;
-  --bg-secondary: #1d4ed8;
-  --bg-hover: #3b82f6;
+  /* Light Mode  */
+  --text: #09090b;
+  --subtext: #27272a;
+  --background: #fafafa;
 
-  --icon-base: #334155;
-  --icon-hover: #3b82f6;
+  --outline: 0.125rem solid #0f172a;
 
-  --skip-content-text: #f1f5f9;
-  --skip-content-bg: #1d4ed8;
+  --icon: #18181b;
+  --icon-overlay: #71717a;
+
+  --skip-text: #f4f4f5;
+  --skip-surface: #09090b;
+}
+
+/* Dark Mode (catppuccin mocha inspired) */
+[data-theme='dark'] {
+  --text: #cdd6f4;
+  --subtext: #bac2de;
+  --background: #11111b;
+
+  --outline: 0.125rem solid #f5a97f;
+
+  --icon: #f5e0dc;
+  --icon-overlay: #ee99a0;
+
+  --skip-text: #11111b;
+  --skip-surface: #f5e0dc;
 }
