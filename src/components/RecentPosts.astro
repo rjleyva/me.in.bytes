@@ -79,15 +79,34 @@ const { recentPostsHeading = 'Latest Posts', recentPosts } =
   .recent-posts__post-title {
     margin: 0;
     text-align: left;
-    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
-  .recent-posts__post-title a:focus {
-    outline: var(--outline);
-    box-shadow: none;
+  .recent-posts__post-title a {
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .recent-posts__post-title a:focus-visible::before,
+  .recent-posts__post-title a:focus-visible::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0.25rem;
+    background-color: var(--focus-color);
     border-radius: 0.125rem;
+  }
+
+  .recent-posts__post-title a:focus-visible::before {
+    left: -0.4rem;
+  }
+
+  .recent-posts__post-title a:focus-visible::after {
+    right: -0.4rem;
   }
 
   @media (min-width: 37.5rem) {
