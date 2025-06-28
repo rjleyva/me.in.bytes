@@ -1,29 +1,33 @@
 :root {
-  /* Light Mode  */
-  --text: #09090b;
-  --subtext: #27272a;
-  --background: #fafafa;
+  /* Light Mode (catppuccin frappé inspired)  */
+  --text: #c6d0f5;
+  --subtext: #b5bfe2;
+  --subtext-1: #e78284;
+  --background: #232634;
 
-  --outline: 0.125rem solid #0f172a;
+  --focus-color: #e78284;
+  --focus-outline: 0.125rem solid var(--focus-color);
 
-  --icon: #18181b;
-  --icon-overlay: #71717a;
+  --icon: #e78284;
+  --icon-overlay: #ea999c;
 
-  --skip-text: #f4f4f5;
-  --skip-surface: #09090b;
+  --skip-text: #232634;
+  --skip-surface: #e78284;
 }
 
 /* Dark Mode (catppuccin mocha inspired) */
 [data-theme='dark'] {
   --text: #cdd6f4;
   --subtext: #bac2de;
+  --subtext-1: #eebebe;
   --background: #11111b;
 
-  --outline: 0.125rem solid #f5a97f;
+  --focus-color: #eebebe;
+  --focus-outline: 0.125rem solid var(--focus-color);
 
-  --icon: #f5e0dc;
-  --icon-overlay: #ee99a0;
+  --icon: #eebebe;
+  --icon-overlay: #f2d5cf;
 
   --skip-text: #11111b;
-  --skip-surface: #f5e0dc;
+  --skip-surface: #eebebe;
 }
