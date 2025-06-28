@@ -17,6 +17,6 @@
       }
     ]
   },
-  "include": [".astro/types.d.ts", "**/*"],
+  "include": [".astro/types.d.ts", "**/*", "types"],
   "exclude": ["dist", "public/"]
 }
