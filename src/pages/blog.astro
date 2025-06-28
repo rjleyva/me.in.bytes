@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import { createMetadata } from '@/utils/metadata';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { generateBlogJsonLd } from '@/utils/jsonld';
+import { generateBlogJsonLd } from '@/utils/json-ld';
 
 const posts = (await getCollection('posts')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
