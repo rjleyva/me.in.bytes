@@ -56,6 +56,34 @@ const { recentPostsHeading = 'Latest Posts', recentPosts } =
     margin-bottom: 1.5rem;
   }
 
+  .recent-posts__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style-type: none;
+  }
+
+  .recent-posts__post-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .recent-posts__meta {
+    white-space: nowrap;
+    font-size: 0.875rem;
+    color: var(--subtext);
+    flex-shrink: 0;
+  }
+
+  .recent-posts__post-title {
+    margin: 0;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .recent-posts__post-title a:focus {
     outline: var(--outline);
     box-shadow: none;
