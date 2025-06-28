@@ -109,11 +109,12 @@ const metadata = {
   }
 
   .blog-archive__year {
-    font-size: 1.25rem;
+    font-size: 1rem;
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: 600;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
-    color: var(--heading, #333);
+    color: var(--subtext-1);
   }
 
   .blog-archive__post-header {
@@ -124,10 +125,11 @@ const metadata = {
   }
 
   .blog-archive__meta {
-    white-space: nowrap;
-    font-size: 0.875rem;
     color: var(--subtext);
+    font-family: 'IBM Plex Mono', monospace;
     flex-shrink: 0;
+    font-size: 0.875rem;
+    white-space: nowrap;
   }
 
   .blog-archive__post-title {
@@ -140,20 +142,8 @@ const metadata = {
     font-size: 1rem;
   }
 
-  @media (min-width: 37.5rem) {
-    .blog-archive__post-title {
-      font-size: 1.1rem;
-    }
-  }
-
-  @media (min-width: 55rem) {
-    .blog-archive__post-title {
-      font-size: 1.2rem;
-    }
-  }
-
   .blog-archive__post-link:focus-visible {
-    outline: 0.125rem solid var(--bg-hover);
+    outline: 0.125rem solid var(--outline);
     outline-offset: 0.125rem;
   }
 </style>
