@@ -3,7 +3,6 @@ title: 'CSS Snippet'
 author: RJ Leyva
 description: 'This is a CSS sample snippet'
 date: 2025-06-26
-tags: ['css', 'tailwindcss']
 ---
 
 # Code snippet

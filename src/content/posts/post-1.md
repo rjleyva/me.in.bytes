@@ -3,7 +3,6 @@ title: My First Blog Post
 author: Astro Learner
 description: "After learning some Astro, I couldn't stop!"
 date: 2022-07-08
-tags: ['astro', 'blogging', 'learning in public', 'successes']
 ---
 
 # My First Blog Post
