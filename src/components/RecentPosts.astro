@@ -94,6 +94,8 @@ const { recentPostsHeading = 'Latest Posts', recentPosts } =
     color: inherit;
   }
 
+  .recent-posts__post-title a:hover::before,
+  .recent-posts__post-title a:hover::after,
   .recent-posts__post-title a:focus-visible::before,
   .recent-posts__post-title a:focus-visible::after {
     content: '';
@@ -105,10 +107,12 @@ const { recentPostsHeading = 'Latest Posts', recentPosts } =
     border-radius: 0.125rem;
   }
 
+  .recent-posts__post-title a:hover::before,
   .recent-posts__post-title a:focus-visible::before {
     left: -0.5rem;
   }
 
+  .recent-posts__post-title a:hover::after,
   .recent-posts__post-title a:focus-visible::after {
     right: -0.5rem;
   }
