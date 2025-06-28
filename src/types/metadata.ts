@@ -1,4 +1,4 @@
-import type { BlogJsonLd, BlogPostingJsonLd } from '@/utils/jsonld';
+import type { BlogJsonLd, BlogPostingJsonLd } from '@/utils/json-ld';
 
 export interface PageMetadata {
   pageTitle: string;
