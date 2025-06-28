@@ -52,7 +52,6 @@ function mapPostToJsonLd(
       '@type': 'Person',
       name: post.data.author
     },
-    keywords: post.data.tags?.length ? post.data.tags.join(', ') : undefined,
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': url
