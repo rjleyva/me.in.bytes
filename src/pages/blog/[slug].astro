@@ -1,7 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import PostLayout from '@/layouts/PostLayout.astro';
-import { generatePostJsonLd } from '@/utils/jsonld';
+import { generatePostJsonLd } from '@/utils/json-ld';
 import { createMetadata } from '@/utils/metadata';
 
 const { slug } = Astro.params;
@@ -11,9 +11,10 @@ if (!post) {
   throw new Error(`Post not found for slug: ${slug}`);
 }
 
-
-// Ensure date is a Date object for downstream formatting
-const date = typeof post.data.date === 'string' ? new Date(post.data.date) : post.data.date;
+const date =
+  typeof post.data.date === 'string'
+    ? new Date(post.data.date)
+    : post.data.date;
 const frontmatter = { ...post.data, date };
 
 const { Content } = await post.render();
