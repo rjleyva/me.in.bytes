@@ -46,23 +46,28 @@ const { recentPostsHeading = 'Latest Posts', recentPosts } =
   }
 
   .recent-posts__heading {
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
   }
 
-  .recent-posts__heading,
   .recent-posts__post-title {
     font-size: 1rem;
   }
 
+  .recent-posts__post-title a:focus {
+    outline: var(--outline);
+    box-shadow: none;
+    border-radius: 0.125rem;
+  }
+
   @media (min-width: 37.5rem) {
-    .recent-posts__heading,
     .recent-posts__post-title {
       font-size: 1.1rem;
     }
   }
 
   @media (min-width: 55rem) {
-    .recent-posts__heading,
     .recent-posts__post-title {
       font-size: 1.2rem;
     }
@@ -80,5 +85,9 @@ const { recentPostsHeading = 'Latest Posts', recentPosts } =
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  .recent-posts__meta {
+    color: var(--subtext);
   }
 </style>
