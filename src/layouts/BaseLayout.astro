@@ -87,8 +87,8 @@ const { pageTitle, pageDescription, pageURL, ogDescription, structuredData } =
   }
 
   body {
-    background: var(--bg-base);
-    color: var(--text-base);
+    background: var(--background);
+    color: var(--text);
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     text-rendering: optimizeLegibility;
@@ -97,18 +97,20 @@ const { pageTitle, pageDescription, pageURL, ogDescription, structuredData } =
   }
 
   .skip-link {
-    position: absolute;
-    top: -2.5rem;
+    background: var(--skip-surface);
+    color: var(--skip-text);
     left: 0;
-    background: var(--skip-content-bg);
-    color: var(--skip-content-text);
     padding: 0.5rem 1rem;
-    z-index: 100;
+    position: absolute;
     text-decoration: none;
     transition: top 0.3s;
+    top: -2.5rem;
+    z-index: 100;
   }
 
   .skip-link:focus {
+    box-shadow: none;
+    outline: none;
     top: 0;
   }
 
@@ -118,17 +120,17 @@ const { pageTitle, pageDescription, pageURL, ogDescription, structuredData } =
   }
 
   .social-icon {
-    color: var(--icon-base);
+    color: var(--icon);
     transition: transform 0.1s ease-in-out;
   }
 
   .social-icon:hover {
-    color: var(--icon-hover);
+    color: var(--icon-overlay);
     transform: scale(1.1) rotate(10deg);
   }
 
   .social-icon--reverse-rotate:hover {
-    color: var(--icon-hover);
+    color: var(--icon-overlay);
     transform: scale(1.1) rotate(-10deg);
   }
 </style>
