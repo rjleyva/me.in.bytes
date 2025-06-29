@@ -5,10 +5,9 @@ import SunIcon from './icons/SunIcon.astro';
 
 <button
   id="theme-toggle-btn"
-  class="theme-toggle"
+  class="theme-toggle icon-button"
   aria-label="Toggle dark and light mode"
   type="button"
-  style="background: none; border: none; cursor: pointer; padding: 0; margin-left: 1rem;"
 >
   <span id="theme-sun" class="hidden" aria-hidden="true">
     <SunIcon />
@@ -59,12 +58,16 @@ import SunIcon from './icons/SunIcon.astro';
   }
 
   .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 1.7rem;
     height: 1.7rem;
-    margin-top: 0.2rem;
     box-shadow: none;
     transition: box-shadow 0.2s ease;
   }
