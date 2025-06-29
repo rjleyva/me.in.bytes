@@ -1,4 +1,4 @@
-# me-in-bytes 🚀
+# Me in Bytes 🚀
 
 > **WIP**: This project is a work in progress and currently in its early development phase.
 
@@ -18,7 +18,12 @@
 This project offers full support for both Light and Dark themes, drawing inspiration from the beautiful [Catppuccin](https://catppuccin.com/) color palettes:
 
 - Light Mode is based on the **Catppuccin _/ˌkætpʊˈtʃiːn/_ Frappé flavor**, featuring soft background tones and pastel highlights for a calm and legible interface.
+
+![homepage-light-mode](./images/homepage-light-mode.webp)
+
 - Dark Mode follows the **Catppuccin _/ˌkætpʊˈtʃiːn/_ Mocha flavor**, delivering a comfortable low-light experience with rich contrast and gentle hues.
+
+![blogpage-dark-mode](./images/blogpage-dark-mode.webp)
 
 You can toggle themes dynamically without a page reload, making for a smooth, modern user experience.
 
@@ -33,6 +38,8 @@ All color values are managed using CSS custom properties, enabling seamless them
 This project is built using a modern, focused stack centered around Astro, TypeScript, and well-considered developer tooling.
 
 ### 🌐 Frontend Framework
+
+![sample-post](./images/sample-post.webp)
 
 - **[Astro](https://astro.build/)** (`astro@^5.10.0`) — The core web framework powering this project, designed for fast and content-rich websites.
 - **[Vanilla CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)** — Styling is written using standard CSS, to build a strong foundational understanding of styling fundamentals before introducing tools like Tailwind or other CSS utility.
@@ -54,6 +61,10 @@ This project is built using a modern, focused stack centered around Astro, TypeS
   - `@eslint/js`, `@eslint/eslintrc`, `@typescript-eslint/parser`, `eslint-plugin-astro`, `eslint-plugin-jsx-a11y`
 - **[Prettier](https://prettier.io/)** — Code formatter used across all supported file types for consistency.
 - **[jiti](https://github.com/unjs/jiti)** — A lightweight runtime interpreter for loading modules on-the-fly.
+
+### 🚀 Deployment
+
+- **[Vercel](https://vercel.com/)** — Hosting and deployment platform used for this project, leveraging their generous Hobby plan for fast, global deployments.
 
 ## 🪪 License
 
