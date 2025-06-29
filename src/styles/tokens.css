@@ -13,6 +13,14 @@
 
   --skip-text: #232634;
   --skip-surface: #e78284;
+
+  --404-text: #c6d0f5;
+  --404-subtext: #b5bfe2;
+  --404-subtext-1: #e78284;
+  --404-subtext-2: #292c3c;
+  --404-background: #232634;
+  --404-surface: #e78284;
+  --404-overlay: #ea999c;
 }
 
 /* Dark Mode (catppuccin mocha inspired) */
@@ -30,4 +38,12 @@
 
   --skip-text: #11111b;
   --skip-surface: #eebebe;
+
+  --404-text: #cdd6f4;
+  --404-subtext: #bac2de;
+  --404-subtext-1: #eebebe;
+  --404-subtext-2: #292c3c;
+  --404-background: #11111b;
+  --404-surface: #eebebe;
+  --404-overlay: #f2d5cf;
 }
