@@ -2,13 +2,23 @@
 
 > **WIP**: This project is a work in progress and currently in its early development phase.
 
-## Features
+## 🚧 Todo
+
+- [ ] Page transition animation
+- [ ] Add database support for the reaction button (considering Upstash Redis or Supabase)
+- [ ] Enable MDX support for blog content
+- [ ] Refactor for better modularity and component reuse
+- [ ] Generate dynamic OG images (optional)
+- [ ] Add RSS feed for blog posts
+
+## ⭐ Features
 
 🔆 Dark & Light Mode Support
 
-This project offers full support for both Light and Dark themes, drawing inspiration from the beautiful Catppuccin color palettes:
-• Light Mode is based on the **Catppuccin _/ˌkætpʊˈtʃiːn/_ Frappé flavor**, featuring soft background tones and pastel highlights for a calm and legible interface.
-• Dark Mode follows the **Catppuccin _/ˌkætpʊˈtʃiːn/_ Mocha flavor**, delivering a comfortable low-light experience with rich contrast and gentle hues.
+This project offers full support for both Light and Dark themes, drawing inspiration from the beautiful [Catppuccin](https://catppuccin.com/) color palettes:
+
+- Light Mode is based on the **Catppuccin _/ˌkætpʊˈtʃiːn/_ Frappé flavor**, featuring soft background tones and pastel highlights for a calm and legible interface.
+- Dark Mode follows the **Catppuccin _/ˌkætpʊˈtʃiːn/_ Mocha flavor**, delivering a comfortable low-light experience with rich contrast and gentle hues.
 
 You can toggle themes dynamically without a page reload, making for a smooth, modern user experience.
 
@@ -47,4 +57,4 @@ This project is built using a modern, focused stack centered around Astro, TypeS
 
 ## 🪪 License
 
-## This project is licensed under the MIT License
+This project is licensed under the MIT License
