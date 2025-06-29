@@ -68,4 +68,27 @@ const socialLinks: socialLinksProps[] = [
     padding: 0;
     margin: 0;
   }
+
+  .socials__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .socials__link {
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.7rem;
+    height: 1.7rem;
+    outline-offset: 2px;
+    transition:
+      box-shadow 0.2s ease,
+      outline-color 0.2s ease;
+  }
+
+  .socials__link:focus {
+    outline-color: var(--focus-outline);
+  }
 </style>
