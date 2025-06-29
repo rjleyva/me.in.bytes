@@ -1,6 +1,7 @@
 ---
 import type { PageMetadata } from '@/types';
 import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
 import '../styles/tokens.css';
 
 const { pageTitle, pageDescription, pageURL, ogDescription, structuredData } =
@@ -47,11 +48,14 @@ const { pageTitle, pageDescription, pageURL, ogDescription, structuredData } =
   </head>
 
   <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <Header siteLogo="Logo" />
-    <main id="main-content">
-      <slot />
-    </main>
+    <div class="layout">
+      <a href="#main-content" class="skip-link">Skip to main content</a>
+      <Header siteLogo="Logo" />
+      <main id="main-content" class="layout__main">
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
 
@@ -102,6 +106,16 @@ const { pageTitle, pageDescription, pageURL, ogDescription, structuredData } =
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+  }
+
+  .layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .layout__main {
+    flex: 1;
   }
 
   .skip-link {
