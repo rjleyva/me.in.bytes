@@ -57,6 +57,10 @@ const pageURL = Astro.url.pathname;
       <Content />
     </section>
   </article>
+
+  <nav class="back-link" aria-label="Back to blog navigation">
+    <a href="/blog">← Back to Blog</a>
+  </nav>
 </BaseLayout>
 
 <style>
@@ -113,5 +117,24 @@ const pageURL = Astro.url.pathname;
   :global(.post__content code) {
     font-size: 0.95rem;
     line-height: 1.5;
+  }
+
+  .back-link {
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.875rem;
+  }
+
+  .back-link a {
+    text-decoration: none;
+    color: var(--icon);
+    transition: opacity 0.2s ease;
+  }
+
+  .back-link a:hover {
+    color: var(--icon-overlay);
   }
 </style>
