@@ -36,6 +36,7 @@ const pageURL = Astro.url.pathname;
       }
 
       <p class="post__meta">
+        Published on:
         <time
           class="post__date"
           datetime={frontmatter.date.toISOString()}
@@ -78,7 +79,16 @@ const pageURL = Astro.url.pathname;
 
   .post__description {
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
+
+  .post__meta {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .post__date {
+    font-family: 'IBM Plex Mono', monospace;
   }
 
   :global(.post__content h1),
@@ -86,7 +96,6 @@ const pageURL = Astro.url.pathname;
   :global(.post__content h3),
   :global(.post__content h4) {
     font-size: 1.2rem;
-    margin-top: 2rem;
     margin-bottom: 1rem;
     line-height: 1.4;
   }
