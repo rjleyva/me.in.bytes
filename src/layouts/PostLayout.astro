@@ -78,7 +78,6 @@ const pageURL = Astro.url.pathname;
 
   .post__title {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
   }
 
   .post__description {
@@ -100,8 +99,24 @@ const pageURL = Astro.url.pathname;
   :global(.post__content h3),
   :global(.post__content h4) {
     font-size: 1.2rem;
-    margin-bottom: 1rem;
+    margin-block: 1rem;
     line-height: 1.4;
+  }
+
+  :global(.post__content p) {
+    line-height: 1.4;
+    margin-block: 1rem;
+  }
+
+  :global(.post__content ul),
+  :global(.post__content ol) {
+    list-style-type: disc;
+    margin-block: 1rem;
+    padding-left: 1.2rem;
+  }
+
+  :global(.post__content li) {
+    margin-bottom: 0.5rem;
   }
 
   :global(.post__content pre) {
