@@ -3,9 +3,9 @@ import { createMetadata } from '@/utils/metadata';
 import '../styles/tokens.css';
 
 const metadata = createMetadata({
-  pageTitle: '404 -Page Not Found',
+  pageTitle: '404 - Page Not Found | Me in Bytes',
   pageDescription:
-    '404 Page Not Found - Sorry, the page you’re looking for doesn’t exist or has been moved.',
+    'Sorry, the page you’re looking for doesn’t exist or may have been moved.',
   pageURL: 'https://me-in-bytes.vercel.app/404'
 });
 ---
@@ -19,12 +19,10 @@ const metadata = createMetadata({
     <meta name="description" content={metadata.pageDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={metadata.pageURL} />
-    <meta property="og:title" content="404 Page Not Found" />
-    <meta
-      property="og:description"
-      content="Sorry, the page you’re looking for doesn’t exist or has been moved."
-    />
+    <meta property="og:title" content={metadata.pageTitle} />
+    <meta property="og:description" content={metadata.pageDescription} />
     <meta name="prerender-status-code" content="404" />
+    <link rel="canonical" href={metadata.pageURL} />
     <title>{metadata.pageTitle}</title>
     <script is:inline>
       (function () {
