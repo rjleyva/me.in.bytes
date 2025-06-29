@@ -59,7 +59,22 @@ import SunIcon from './icons/SunIcon.astro';
   }
 
   .theme-toggle {
-    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.7rem;
+    height: 1.7rem;
+    margin-top: 0.2rem;
+    box-shadow: none;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .theme-toggle:focus {
+    box-shadow: 0 0 0 3px var(--focus-outline);
+  }
+
+  .theme-toggle:focus-visible {
+    box-shadow: 0 0 0 3px var(--focus-outline);
   }
 
   #theme-sun,
